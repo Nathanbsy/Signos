@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/style.css">
+    <title></title>
+</head>
+<body>
+    <main>
+        <h1>Signo</h1>
+        <section>
+            <div class="container__inputs">
+                <label for="dia">Dia</label>
+                <input type="number" name="dia" id="dia" max="31">
+                <label for="mes">Mês</label>
+                <input type="number" name="mes" id="mes" max="12">
+                <label for="ano">Ano</label>
+                <input type="number" name="ano" id="ano" maxlength="4">
+                <button onclick="signar()">Ver signo</button>
+            </div>
+            <div class="res">
+                <div class="textos">
+                    <h3>Resultado</h3>
+                    <p id="resDia"></p>
+                    <p id="resMes"></p>
+                    <p id="resAno"></p>
+                    <h3 id="resSemana"></h3>
+                </div>
+                <div id="containerImagem" class="signo__imagem">
+                    <h2 id="nomeSigno"></h2>
+                </div>
+                
+                <button onclick="limpar()">Limpar</button>
+            </div>
+        </section>
+    </main>
+    <script src="./src/script.js"></script>
+</body>
+</html>
