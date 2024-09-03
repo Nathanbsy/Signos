@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./src/style.css">
+    <!-- <link rel="stylesheet" href="./src/style.css"> -->
     <title></title>
 </head>
 <body>
+
     <main>
-        <h1>Signo</h1>
-        <section>
+        <!-- <img src="./src/assets/imagens/imagem-corpo.png" alt=""> -->
+        <section class="sec1">
+            <h1>SIGNO</h1>
             <div class="container__inputs">
                 <label for="dia">Dia</label>
                 <input type="number" name="dia" id="dia" max="31">
@@ -26,9 +28,11 @@
                     <p id="resMes"></p>
                     <p id="resAno"></p>
                     <h3 id="resSemana"></h3>
+                    <h3 id="idade"></h3>
                 </div>
                 <div id="containerImagem" class="signo__imagem">
                     <h2 id="nomeSigno"></h2>
+                    <img src="" alt="" id="imagensSignos" style="width: 50%;">
                 </div>
                 
                 <button onclick="limpar()">Limpar</button>
