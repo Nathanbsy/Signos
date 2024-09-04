@@ -6,9 +6,11 @@ const resultadoMes = document.getElementById("resMes");
 const resultadoAno = document.getElementById("resAno");
 const resultadoSemana = document.getElementById("resSemana");
 const seuSigno = document.getElementById("nomeSigno");
-const divImagem = document.getElementById("containerImagem");
+const divImagem = document.getElementById("bingo");
 const imagemSigno = document.getElementById("imagensSignos");
 const idadePessoa = document.getElementById("idade");
+const containerImg = document.getElementsByTagName("main");
+var corpo = document.getElementById('corpo');
 const meses = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
 const dataHoje = new Date();
 const anoBurro = dataHoje.getFullYear();
@@ -18,7 +20,7 @@ function calculaDiaSemana(diaCal, mesCal, anoCal) {
     const data = new Date(anoCal, mesCal - 1, diaCal);
     const diasDaSemana = ["um Domingo", "uma Segunda-feira", "uma Terça-feira", "uma Quarta-feira", "uma Quinta-feira", "uma Sexta-feira", "um Sábado"];
     console.log(diaCal, mesCal, anoCal);
-    return diasDaSemana[data.getDay()];
+    return diasDaSemana[data.getDate()];
 }
 
 function calculaMes(diaCal, mesCal, anoCal) {
@@ -61,7 +63,6 @@ function signar() {
         } else if (mesNasc == meses[4] && dia >= 21 || mesNasc == meses[5] && dia <= 20) {
             //Gemeos
             imagemSigno.src = "https://super.abril.com.br/wp-content/uploads/2021/01/gemeos-identicos_site.jpg?quality=90&strip=info&w=1024&h=682&crop=1";
-
             divImagem.appendChild(imagemSigno);
             seuSigno.innerHTML = "Seu signo é Gemêos";
         } else if (mesNasc == meses[5] && dia >= 21 || mesNasc == meses[6] && dia <= 22) {
@@ -71,8 +72,7 @@ function signar() {
             seuSigno.innerHTML = "Seu signo é Cancêr";
         } else if (mesNasc == meses[6] && dia >= 23 || mesNasc == meses[7] && dia <= 22) {
             //Leão
-            imagemSigno.src = "https://midias.correiobraziliense.com.br/_midias/jpg/2022/04/26/675x450/1_francesco_de_tommaso_zxnkxnr32ng_unsplash-7844451.jpg?20220426113157?20220426113157";
-
+            imagemSigno.src = "https://midias.correiobraziliense.com.br/_midias/jpg/2022/04/26/675x450/1_francesco_de_tommaso_zxnkxnr32ng_ubodynsplash-7844451.jpg?20220426113157?20220426113157"
             divImagem.appendChild(imagemSigno);
             seuSigno.innerHTML = "Seu signo é Leão";
         } else if (mesNasc == meses[7] && dia >= 23 || mesNasc == meses[8] && dia <= 22) {
@@ -82,7 +82,7 @@ function signar() {
             seuSigno.innerHTML = "Seu signo é Virgem";
         } else if (mesNasc == meses[8] && dia >= 23 || mesNasc == meses[9] && dia <= 22) {
             //Libra
-            imagemSigno.src = "https://s2-valor.glbimg.com/rEvzAFs85jOdnN5kYYB9DUttrzo=/0x0:1920x1440/1000x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2022/N/e/KRwmjIRMKDFCiu8OeGIA/bank-gf1720b6e5-1920.jpg";
+            imagemSigno.src = "https://www.handtalk.me/br/wp-content/uploads/sites/8/2023/02/ALFABETO-LIBRAS-1024x594.png";
             divImagem.appendChild(imagemSigno);
             seuSigno.innerHTML = "Seu signo é Libra";
         } else if (mesNasc == meses[9] && dia >= 23 || mesNasc == meses[10] && dia <= 21) {
@@ -97,14 +97,14 @@ function signar() {
             seuSigno.innerHTML = "Seu signo é Sagitário";
         } else if (mesNasc == meses[11] && dia >= 22 || mesNasc == meses[0] && dia <= 20) {
             //Capricornio
-            imagemSigno.src = "https://madeinbern.com/fileadmin/_processed_/b/a/csm_wildbeobachtung-auf-dem-niederhorn-1_67e3deb8e0.jpg";
-
+            imagemSigno.src = "https://cinefera.com.br/wp-content/uploads/2024/07/My-Deer-Friend-Nokotan-e-um-anime-com-uma-comedia-bizarra-mas-muito-boa-da-Crunchyroll-Wit-Studio-2.webp";
             divImagem.appendChild(imagemSigno);
             seuSigno.innerHTML = "Seu signo é Capricórnio";
         } else if (mesNasc == meses[0] && dia >= 21 || mesNasc == meses[1] && dia <= 18) {
             //Aquario
             imagemSigno.src = "https://img.odcdn.com.br/wp-content/uploads/2022/01/peixe-aquario.jpg";
             divImagem.appendChild(imagemSigno);
+            
             seuSigno.innerHTML = "Seu signo é Aquário";
         } else if (mesNasc == meses[1] && dia >= 19 || mesNasc == meses[2] && dia <= 20) {
             //Peixes
@@ -115,16 +115,13 @@ function signar() {
             alert("[Erro]");
         }
 
-
         const mensagem = `Você nasceu em: ${dia} de ${mesNasc} de ${ano}, que cai em ${diaDaSemana}`;
 
         resultadoSemana.innerHTML = mensagem;
         idadePessoa.innerHTML = anosDeIdade(dia, mes, ano);
     }
 
-
 }
-
 
 
 function anosDeIdade(diaCal, mesCal, anoCal) {
@@ -137,8 +134,6 @@ function anosDeIdade(diaCal, mesCal, anoCal) {
 
     return velhice;
 }
-
-
 
 function limpar() {
     if (imagemSigno) {

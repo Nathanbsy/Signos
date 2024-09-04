@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="./src/style.css"> -->
+    <link rel="stylesheet" href="./src/style.css">
     <title></title>
 </head>
-<body>
+<body id="corpo">
 
     <main>
-        <!-- <img src="./src/assets/imagens/imagem-corpo.png" alt=""> -->
+     <h1>SIGNO</h1>
+        <!-- <img id="imagemMuda" src="./src/assets/imagens/imagem-corpo.png" alt=""> -->
         <section class="sec1">
-            <h1>SIGNO</h1>
+
             <div class="container__inputs">
                 <label for="dia">Dia</label>
                 <input type="number" name="dia" id="dia" max="31">
@@ -32,7 +33,9 @@
                 </div>
                 <div id="containerImagem" class="signo__imagem">
                     <h2 id="nomeSigno"></h2>
-                    <img src="" alt="" id="imagensSignos" style="width: 50%;">
+                    <div id="bingo" class="divImg">
+                        <img src="" alt="" id="imagensSignos">
+                    </div>
                 </div>
                 
                 <button onclick="limpar()">Limpar</button>
